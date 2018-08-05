@@ -32,8 +32,20 @@ class ToDoList(QMainWindow):
         self.tb.setMovable(False)
         new = QAction(QIcon("images/icons/add.png"), "new", self)
         self.tb.addAction(new)
+        delete = QAction(QIcon("images/icons/delete.png"), "delete", self)
+        self.tb.addAction(delete)
+        search = QAction(QIcon("images/icons/search.png"), "search", self)
+        self.tb.addAction(search)
+        history = QAction(QIcon("images/icons/history.png"), "history", self)
+        self.tb.addAction(history)
+        update = QAction(QIcon("images/icons/update.png"), "update", self)
+        self.tb.addAction(update)
         trash = QAction(QIcon("images/icons/trash.png"), "trash", self)
         self.tb.addAction(trash)
+        send = QAction(QIcon("images/icons/send.png"), "send", self)
+        self.tb.addAction(send)
+        share = QAction(QIcon("images/icons/share.png"), "share", self)
+        self.tb.addAction(share)
         exit = QAction(QIcon("images/icons/exit.png"), "exit", self)
         self.tb.addAction(exit)
 
@@ -44,7 +56,8 @@ class ToDoList(QMainWindow):
         if a.text() == 'exit':
             qApp.exit()
         elif a.text() == 'trash':
-            pass
+            item = QListWidgetItem("something")
+            self.main_form.list1.addItem(item)
         elif a.text() == 'new':
             window = AddTaskWindow(self)
             window.exec_()
@@ -72,6 +85,9 @@ class MainForm(QWidget):
         self.label1 = QLabel("Срочные")
         self.label1.setAlignment(Qt.AlignHCenter)
         self.list1 = QListWidget()
+        self.list1.setStyleSheet("QListWidget::item { border-style: solid;"
+                                                     "border-width: 0px 0px 1px 0px;"
+                                                     "border-color: red; }")
         p = self.list1.palette()
         p.setColor(self.list1.backgroundRole(), Qt.red)
         self.list1.setPalette(p)
