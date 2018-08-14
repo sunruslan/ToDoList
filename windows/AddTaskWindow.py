@@ -20,14 +20,14 @@ class AddTaskWindow(QDialog):
         creator = QLineEdit()
         executor = QLineEdit()
         layout.addRow('Название', name)
-        layout.addRow('Описани', description)
+        layout.addRow('Описание', description)
         layout.addRow('Создатель', creator)
         layout.addRow('Исполнитель', executor)
         self.setLayout(layout)
 
 
 if __name__ == '__main__':
-    app =QApplication(sys.argv)
+    app = QApplication(sys.argv)
     window = AddTaskWindow()
     window.show()
     sys.exit(app.exec_())
