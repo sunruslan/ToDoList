@@ -1,6 +1,6 @@
 import sys
 
-from PyQt5 import Qt
+from PyQt5.Qt import *
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QApplication, QSplashScreen, qApp
 
