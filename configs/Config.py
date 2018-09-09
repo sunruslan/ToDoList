@@ -3,4 +3,5 @@ class Config:
     APP_VERSION = '1.0.0'
     APP_LOADER = 'images/loader.png'
     APP_ICON = 'images/logo.png'
-    LOG_FILE = '/home/ruslan/Documents/ToDoList/log/logs.log'
+    LOG_FILE = 'log/logs.log'
+    TASKS_DB = 'data_bases/tasks.db'

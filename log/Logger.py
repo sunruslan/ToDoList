@@ -11,7 +11,7 @@ class Logger(object):
     __instance = None
 
     @staticmethod
-    def inst():
+    def instance():
         if Logger.__instance is None:
             Logger.__instance = Logger()
         return Logger.__instance

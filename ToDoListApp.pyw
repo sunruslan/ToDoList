@@ -9,7 +9,7 @@ from log.Logger import Logger
 
 
 def execute_app():
-    QtCore.qInstallMessageHandler(Logger.inst())
+    QtCore.qInstallMessageHandler(Logger.instance())
     app = QApplication(sys.argv)
     splash = SplashScreen()
     qApp.processEvents()
