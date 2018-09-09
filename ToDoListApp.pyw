@@ -1,15 +1,15 @@
 import sys
 
-from PyQt5.Qt import *
-from PyQt5.QtGui import QPixmap
-from PyQt5.QtWidgets import QApplication, QSplashScreen, qApp
+from PyQt5 import QtCore
+from PyQt5.QtWidgets import QApplication, qApp
 
-from configs.Config import Config
 from windows.MainWindow import ToDoList
 from windows.SplashScreen import SplashScreen
+from log.Logger import Logger
 
 
 def execute_app():
+    QtCore.qInstallMessageHandler(Logger.inst())
     app = QApplication(sys.argv)
     splash = SplashScreen()
     qApp.processEvents()
