@@ -6,14 +6,12 @@ from PyQt5.QtWidgets import QApplication, QSplashScreen, qApp
 
 from configs.Config import Config
 from windows.MainWindow import ToDoList
+from windows.SplashScreen import SplashScreen
 
 
 def execute_app():
     app = QApplication(sys.argv)
-    splash = QSplashScreen(QPixmap(Config.APP_LOADER))
-    splash.showMessage("Загрузка данных", Qt.AlignHCenter |
-                       Qt.AlignVCenter | Qt.gray)
-    splash.show()
+    splash = SplashScreen()
     qApp.processEvents()
     main_window = ToDoList()
     main_window.load_data(splash)
